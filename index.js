@@ -1,22 +1,22 @@
-// index.js
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import connectDB from "./config/database.js";
 import recipeRoutes from "./routes/recipeRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 4001;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Database Connection
+// Database connection
 connectDB();
 
 // Routes
 app.use("/api/recipes", recipeRoutes);
+app.use("/api/auth", authRoutes);
 
 // Error handling for undefined routes
 app.use((req, res, next) => {
