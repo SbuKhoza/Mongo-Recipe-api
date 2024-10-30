@@ -14,10 +14,11 @@ app.use(express.json());
 // Database connection
 connectDB();
 
-// Root route handler
+//Route Handler
 app.get("/", (req, res) => {
-    res.send("Welcome to the Recipe API!");
-});
+    res.send("Welcome. Make!");
+  });
+  
 
 // Routes
 app.use("/api/recipes", recipeRoutes);
