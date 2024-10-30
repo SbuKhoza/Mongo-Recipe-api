@@ -1,4 +1,3 @@
-// controllers/recipeController.js
 import Recipe from "../models/recipe.js";
 
 // Create a new recipe
